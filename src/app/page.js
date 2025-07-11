@@ -63,7 +63,7 @@ export default function Home() {
 
             <div className="mt-6">
               <a
-                href="/resume.pdf"
+                href="https://drive.google.com/file/d/1uSTfdb1sRPfHas83T2Zm7iUD6IPpioN-/view?usp=sharing"
                 download
                 className="inline-block bg-purple-600 hover:bg-purple-700 transition px-6 py-2 rounded-full text-white font-medium"
               >
