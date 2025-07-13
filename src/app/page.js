@@ -44,7 +44,7 @@ export default function Home() {
           {/* Image Section */}
           <div className="w-full md:w-1/2 flex justify-center">
             <img
-              src="/albert.png" // Make sure this image exists in your public folder
+              src="/albert.png" 
               alt="Albert Adekanye"
               className="rounded-2xl w-60 md:w-80 shadow-lg"
             />
@@ -73,7 +73,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* SKILL SECTION */}
       {/* SKILLS SECTION */}
 <section id="skills" className="px-6 md:px-24 py-20 text-center bg-black/20">
   <h2 className="text-3xl md:text-4xl font-bold text-purple-400 mb-10">Skills & Tech Stack</h2>
@@ -134,7 +133,7 @@ export default function Home() {
 
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
     {/* Project Card 1 */}
-    <div className="bg-gray-800/40 rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 transition">
+    {/* <div className="bg-gray-800/40 rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 transition">
       <h3 className="text-xl font-semibold text-white mb-2">AITECHEM</h3>
       <p className="text-sm text-gray-300 mb-4">
         An AI-powered online exam system for students and lecturers, built with Supabase and Next.js.
@@ -148,10 +147,10 @@ export default function Home() {
         <a href="https://aitechem.vercel.app" target="_blank" className="text-purple-400 hover:underline">Live Demo</a>
         <a href="https://github.com/AlbertAdekanye/AITECHEM" target="_blank" className="text-gray-400 hover:underline">GitHub</a>
       </div>
-    </div>
+    </div> */}
 
     {/* Project Card 2 */}
-    <div className="bg-gray-800/40 rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 transition">
+    {/* <div className="bg-gray-800/40 rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 transition">
       <h3 className="text-xl font-semibold text-white mb-2">FUOYE Market</h3>
       <p className="text-sm text-gray-300 mb-4">
         A campus-based online marketplace for students to buy and sell products securely.
@@ -165,10 +164,10 @@ export default function Home() {
         <a href="https://fuoyemarket.vercel.app" target="_blank" className="text-purple-400 hover:underline">Live Demo</a>
         <a href="https://github.com/AlbertAdekanye/fuoye-market" target="_blank" className="text-gray-400 hover:underline">GitHub</a>
       </div>
-    </div>
+    </div> */}
 
     {/* Project Card 3 */}
-    <div className="bg-gray-800/40 rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 transition">
+    {/* <div className="bg-gray-800/40 rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 transition">
       <h3 className="text-xl font-semibold text-white mb-2">Tesla Clone</h3>
       <p className="text-sm text-gray-300 mb-4">
         A beautiful landing page clone of the Tesla homepage built for learning UI/UX structure.
@@ -181,7 +180,8 @@ export default function Home() {
         <a href="https://tesla-clone-codewithkanye.vercel.app" target="_blank" className="text-purple-400 hover:underline">Live Demo</a>
         <a href="https://github.com/AlbertAdekanye/tesla-clone" target="_blank" className="text-gray-400 hover:underline">GitHub</a>
       </div>
-    </div>
+    </div> */}
+
     {/* Project Card 4 */}
     <div className="bg-gray-800/40 rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 transition">
       <h3 className="text-xl font-semibold text-white mb-2">NIKE STORE</h3>
@@ -197,6 +197,7 @@ export default function Home() {
         <a href="https://github.com/AlbertAdekanye/nike-fake-store-clone" target="_blank" className="text-gray-400 hover:underline">GitHub</a>
       </div>
     </div>
+
     {/* Project Card 5 */}
     <div className="bg-gray-800/40 rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 transition">
       <h3 className="text-xl font-semibold text-white mb-2">REALTOR</h3>
@@ -212,6 +213,7 @@ export default function Home() {
         <a href="https://github.com/AlbertAdekanye/Realtor-Clone" target="_blank" className="text-gray-400 hover:underline">GitHub</a>
       </div>
     </div>
+
     {/* Project Card 6 */}
     <div className="bg-gray-800/40 rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 transition">
       <h3 className="text-xl font-semibold text-white mb-2">IMDB-clone</h3>
@@ -227,6 +229,7 @@ export default function Home() {
         <a href="https://github.com/AlbertAdekanye/IMDB-clone" target="_blank" className="text-gray-400 hover:underline">GitHub</a>
       </div>
     </div>
+
   {/* Project Card 7 */}
     <div className="bg-gray-800/40 rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 transition">
       <h3 className="text-xl font-semibold text-white mb-2">BOOKMARK WEBSITE</h3>
@@ -242,6 +245,7 @@ export default function Home() {
         <a href="https://github.com/AlbertAdekanye/bookmark1" target="_blank" className="text-gray-400 hover:underline">GitHub</a>
       </div>
     </div>
+
   {/* Project Card 8 */}
       <div className="bg-gray-800/40 rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 transition">
       <h3 className="text-xl font-semibold text-white mb-2">FYLO</h3>
@@ -257,6 +261,7 @@ export default function Home() {
         <a href="https://github.com/AlbertAdekanye/fylo1" target="_blank" className="text-gray-400 hover:underline">GitHub</a>
       </div>
     </div>
+
     {/* Project Card 9 */}
     <div className="bg-gray-800/40 rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 transition">
       <h3 className="text-xl font-semibold text-white mb-2">TESTIMONIAL-GRID</h3>
@@ -274,6 +279,7 @@ export default function Home() {
     </div>
   </div>
 </section>
+
 {/* TESTIMONIALS SECTION */}
 <section id="testimonials" className="px-6 md:px-24 py-20 bg-black/20 text-center">
   <h2 className="text-3xl md:text-4xl font-bold text-purple-400 mb-10">Testimonials</h2>
@@ -379,10 +385,9 @@ export default function Home() {
     </div>
   </div>
 </section>
- {/* CONTACT SECTION */}
-      <Contact />
-
-      {/* FOOTER */}
+{/* CONTACT SECTION */}
+<Contact />
+{/* FOOTER */}
 
 <Footer />
 </main>
