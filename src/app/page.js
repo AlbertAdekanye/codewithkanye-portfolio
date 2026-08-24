@@ -216,7 +216,7 @@ export default function Home() {
             <p className="mt-7 max-w-2xl text-base leading-7 text-zinc-400 sm:text-lg sm:leading-8">
               I&apos;m Albert Adekanye, a
               full-stack developer turning ideas into
-              fast, accessible web experiences—and
+              fast, accessible web experiences and
               helping new developers understand the
               craft.
             </p>
