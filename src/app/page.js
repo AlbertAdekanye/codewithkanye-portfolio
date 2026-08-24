@@ -1,395 +1,500 @@
+import Image from "next/image";
+import {
+  ArrowDown,
+  ArrowUpRight,
+  Github,
+  Linkedin,
+  Twitter,
+  Youtube,
+} from "lucide-react";
+
 import Navbar from "./components/Navbar";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import { Github, Linkedin, Twitter, Youtube } from "lucide-react";
+
+const socialLinks = [
+  {
+    name: "GitHub",
+    href: "https://github.com/AlbertAdekanye",
+    icon: Github,
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/albert-adekanye-a82118243/",
+    icon: Linkedin,
+  },
+  {
+    name: "X",
+    href: "https://x.com/adekanye_albert",
+    icon: Twitter,
+  },
+  {
+    name: "YouTube",
+    href: "https://www.youtube.com/@codewithkanye",
+    icon: Youtube,
+  },
+];
+
+const skills = [
+  {
+    category: "Frontend",
+    items: [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Responsive Design",
+    ],
+  },
+  {
+    category: "Backend",
+    items: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "REST APIs",
+      "Supabase",
+      "Authentication",
+    ],
+  },
+  {
+    category: "Currently learning",
+    items: [
+      "Java",
+      "Spring Boot",
+      "SQL",
+      "PostgreSQL",
+      "Docker",
+      "Cloud Engineering",
+    ],
+  },
+  {
+    category: "Tools and platforms",
+    items: [
+      "Git",
+      "GitHub",
+      "Postman",
+      "Vercel",
+      "VS Code",
+      "MongoDB Compass",
+      "npm",
+      "Chrome DevTools",
+      "ESLint",
+      "Prettier",
+      "Figma",
+      "Render",
+    ],
+  },
+];
+
+const projects = [
+  {
+    title: "Letters to CR7",
+    description:
+      "A global tribute platform where Cristiano Ronaldo fans can explore his journey and share heartfelt letters with supporters around the world.",
+    technologies: [
+      "React",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+    liveUrl:
+      "https://letters-to-cr7-five.vercel.app/",
+    githubUrl:
+      "https://github.com/AlbertAdekanye/letters-to-cr7",
+    featured: true,
+  },
+  {
+    title: "Natours",
+    description:
+      "A full-stack tour-booking application featuring authentication, secure REST APIs, tour management, payments, reviews, maps, and email workflows.",
+    technologies: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Pug",
+    ],
+    githubUrl:
+      "https://github.com/AlbertAdekanye/4-natours",
+    featured: true,
+  },
+  {
+    title: "Realtor",
+    description:
+      "A modern real-estate platform that allows users to discover, search, filter, and explore property listings.",
+    technologies: [
+      "React",
+      "Tailwind CSS",
+      "Firebase",
+    ],
+    liveUrl:
+      "https://realtor-clone-five-alpha.vercel.app/sign-in",
+    githubUrl:
+      "https://github.com/AlbertAdekanye/Realtor-Clone",
+  },
+  {
+    title: "Nike Store",
+    description:
+      "A responsive e-commerce storefront focused on clear product presentation and a polished shopping experience.",
+    technologies: ["React", "Tailwind CSS"],
+    liveUrl:
+      "https://nike-fake-store-clone.vercel.app/",
+    githubUrl:
+      "https://github.com/AlbertAdekanye/nike-fake-store-clone",
+  },
+  {
+    title: "Tesla Clone",
+    description:
+      "A responsive recreation of Tesla's landing experience, built to practise visual hierarchy, layouts, and modern interactions.",
+    technologies: ["React", "Tailwind CSS"],
+    liveUrl:
+      "https://tesla-clone-codewithkanye.vercel.app",
+    githubUrl:
+      "https://github.com/AlbertAdekanye/tesla-clone",
+  },
+  {
+    title: "IMDb Clone",
+    description:
+      "A responsive movie-discovery interface for browsing film and television content through a clean user experience.",
+    technologies: [
+      "React",
+      "Tailwind CSS",
+      "REST API",
+    ],
+    liveUrl:
+      "https://imdb-clone-liard-two.vercel.app",
+    githubUrl:
+      "https://github.com/AlbertAdekanye/IMDB-clone",
+  },
+];
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-black via-purple-900 to-indigo-900 text-white font-sans">
+    <main
+      id="main-content"
+      className="min-h-screen bg-zinc-950 text-white"
+    >
       <Navbar />
 
-      {/* HERO SECTION */}
-      <section className="flex flex-col items-center justify-center text-center px-6 py-32">
-        <h2 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
-          Hello, I`m <span className="text-purple-400">Albert</span> 👋
-        </h2>
-        <p className="text-lg md:text-xl text-gray-300 mb-6">
-          A dedicated <span className="text-purple-400">frontend developer and tech educator</span> specializing in building fast, beautiful web applications using <span className="text-purple-400">React, Next.js, Tailwind CSS, and Supabase.</span> I focus on delivering elegant, high-performance user interfaces while sharing knowledge to empower others in the tech community.
-        </p>
+      {/* Hero */}
+      <section
+        id="home"
+        className="relative isolate min-h-screen overflow-hidden px-5 pb-20 pt-32 sm:px-8 lg:px-12 lg:pt-40"
+      >
+        {/* Background effects */}
+        <div
+          aria-hidden="true"
+          className="absolute -left-52 top-20 -z-10 size-[500px] rounded-full bg-purple-600/20 blur-[160px]"
+        />
 
-        <div className="flex space-x-4">
-          <a href="https://github.com/AlbertAdekanye" target="_blank" className="bg-gray-800 p-3 rounded-full hover:bg-purple-700">
-            <Github size={24} />
-          </a>
-          <a href="https://x.com/adekanye_albert" target="_blank" className="bg-gray-800 p-3 rounded-full hover:bg-purple-700">
-            <Twitter size={20} />
-          </a>
-          <a href="https://www.youtube.com/@codewithkanye" target="_blank" className="bg-gray-800 p-3 rounded-full hover:bg-purple-700">
-            <Youtube size={20} />
-          </a>
-          <a href="https://www.linkedin.com/in/albert-adekanye-a82118243/" target="_blank" className="bg-gray-800 p-3 rounded-full hover:bg-purple-700">
-            <Linkedin size={20} />
-          </a>
-        </div>
-        <div className="mt-10 animate-bounce">
-          <a href="#about" className="text-purple-400 font-semibold">↓ Scroll Down</a>
-        </div>
-      </section>
+        <div
+          aria-hidden="true"
+          className="absolute -right-40 bottom-0 -z-10 size-[420px] rounded-full bg-indigo-500/10 blur-[150px]"
+        />
 
-      {/* ABOUT SECTION */}
-      <section id="about" className="px-6 md:px-24 py-20 bg-black/30">
-        <h2 className="text-3xl md:text-4xl font-bold text-purple-400 mb-10 text-center">About Me</h2>
+        <div className="mx-auto grid min-h-[calc(100vh-10rem)] max-w-7xl items-center gap-16 lg:grid-cols-[1.15fr_0.85fr]">
+          <div>
+            <div className="inline-flex items-center gap-3 rounded-full border border-lime-300/20 bg-lime-300/5 px-4 py-2">
+              <span className="relative flex size-2">
+                <span className="absolute inline-flex size-full animate-ping rounded-full bg-lime-300 opacity-50" />
 
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-10 max-w-6xl mx-auto">
-          {/* Image Section */}
-          <div className="w-full md:w-1/2 flex justify-center">
-            <img
-              src="/albert.png" 
-              alt="Albert Adekanye"
-              className="rounded-2xl w-60 md:w-80 shadow-lg"
-            />
+                <span className="relative inline-flex size-2 rounded-full bg-lime-300" />
+              </span>
+
+              <span className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-lime-300">
+                Available for opportunities
+              </span>
+            </div>
+
+            <h1 className="mt-7 max-w-4xl text-5xl font-semibold leading-[0.95] tracking-[-0.06em] text-white sm:text-6xl lg:text-8xl">
+              I build useful digital products that feel{" "}
+              <span className="font-serif font-normal italic text-purple-400">
+                effortless.
+              </span>
+            </h1>
+
+            <p className="mt-7 max-w-2xl text-base leading-7 text-zinc-400 sm:text-lg sm:leading-8">
+              I&apos;m Albert Adekanye, a
+              full-stack developer turning ideas into
+              fast, accessible web experiences—and
+              helping new developers understand the
+              craft.
+            </p>
+
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#projects"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-purple-400 px-6 py-3.5 font-semibold text-zinc-950 transition hover:-translate-y-1 hover:bg-purple-300"
+              >
+                View my work
+                <ArrowDown size={18} />
+              </a>
+
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-6 py-3.5 font-semibold text-white transition hover:-translate-y-1 hover:border-purple-400/50 hover:bg-white/10"
+              >
+                Let&apos;s work together
+              </a>
+            </div>
+
+            <div className="mt-7 flex gap-3">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.name}
+                    className="grid size-11 place-items-center rounded-xl border border-white/10 bg-white/5 text-zinc-400 transition hover:-translate-y-1 hover:border-purple-400/60 hover:text-purple-400"
+                  >
+                    <Icon size={19} />
+                  </a>
+                );
+              })}
+            </div>
           </div>
 
-          {/* Text Section */}
-          <div className="w-full md:w-1/2 text-gray-300 text-center md:text-left">
-            <p className="text-base md:text-lg leading-relaxed">
-              I`m <span className="font-semibold text-white">Albert Adekanye</span>, a frontend developer and tech educator with a passion for turning ideas into pixel-perfect web experiences.
-              With a background in Physics and a strong foundation in <span className="text-purple-400">React, Next.js, Tailwind CSS</span>, and <span className="text-purple-400">Supabase</span>, I build modern, scalable, and beautiful websites that blend form with function.
-            </p>
+          {/* Hero image */}
+          <div className="relative mx-auto w-full max-w-md">
+            <div className="absolute inset-0 rotate-6 rounded-[2rem] bg-gradient-to-br from-purple-500/30 to-indigo-500/10 blur-sm" />
 
-            <p className="text-base md:text-lg mt-4 leading-relaxed">
-              Whether I`m working on a tech product, mentoring junior devs, or creating content for my YouTube channel <span className="text-white font-medium">(@codewithkanye)</span>, I’m driven by the belief that technology should be accessible, impactful, and inspiring.
-            </p>
+            <div className="relative rotate-2 overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-purple-400/20 to-zinc-900 shadow-2xl shadow-purple-950/30">
+              <Image
+                src="/albert.png"
+                alt="Albert Adekanye"
+                width={520}
+                height={620}
+                priority
+                className="h-auto w-full object-cover"
+              />
+            </div>
 
-            <div className="mt-6">
-              <a
-                href="https://drive.google.com/file/d/1uSTfdb1sRPfHas83T2Zm7iUD6IPpioN-/view?usp=sharing"
-                download
-                className="inline-block bg-purple-600 hover:bg-purple-700 transition px-6 py-2 rounded-full text-white font-medium"
-              >
-                📄 Download Resume
-              </a>
+            <div className="absolute -bottom-5 -left-3 rounded-2xl border border-white/10 bg-zinc-950/90 px-5 py-4 shadow-2xl backdrop-blur-xl sm:-left-10">
+              <strong className="block text-lg text-lime-300">
+                3+ years
+              </strong>
+
+              <span className="text-xs text-zinc-400">
+                Building for the web
+              </span>
             </div>
           </div>
         </div>
       </section>
-      {/* SKILLS SECTION */}
-<section id="skills" className="px-6 md:px-24 py-20 text-center bg-black/20">
-  <h2 className="text-3xl md:text-4xl font-bold text-purple-400 mb-10">Skills & Tech Stack</h2>
-  <p className="text-gray-300 max-w-3xl mx-auto text-base md:text-lg mb-8">
-    These are the core tools and technologies I use to design, develop, and deploy modern web applications.
-  </p>
 
-  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-5xl mx-auto text-gray-300">
-    {/* Each Skill */}
-    <div className="flex flex-col items-center bg-gray-800/30 p-4 rounded-xl hover:bg-purple-800/30 transition">
-      <img src="/skills/javascript.svg" alt="JavaScript" className="w-10 h-10 mb-2" />
-      <span className="text-sm font-medium">JavaScript</span>
-    </div>
+      {/* About */}
+      <section
+        id="about"
+        className="border-t border-white/10 px-5 py-24 sm:px-8 lg:px-12 lg:py-32"
+      >
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:gap-24">
+          <div>
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-purple-400">
+              01 — About
+            </p>
 
-    <div className="flex flex-col items-center bg-gray-800/30 p-4 rounded-xl hover:bg-purple-800/30 transition">
-      <img src="/skills/react.svg" alt="React" className="w-10 h-10 mb-2" />
-      <span className="text-sm font-medium">React.js</span>
-    </div>
+            <h2 className="mt-5 text-4xl font-semibold leading-tight tracking-[-0.04em] text-white sm:text-5xl">
+              Physics taught me how to solve problems.
+              Code lets me ship the solutions.
+            </h2>
+          </div>
 
-    <div className="flex flex-col items-center bg-gray-800/30 p-4 rounded-xl hover:bg-purple-800/30 transition">
-      <img src="/skills/nextjs.svg" alt="Next.js" className="w-10 h-10 mb-2" />
-      <span className="text-sm font-medium">Next.js</span>
-    </div>
+          <div className="lg:pt-10">
+            <p className="text-base leading-8 text-zinc-400 sm:text-lg">
+              I&apos;m a Nigerian developer and tech
+              educator with a B.Sc. in Physics. I combine
+              analytical thinking with product-focused
+              engineering to build responsive,
+              maintainable applications.
+            </p>
 
-    <div className="flex flex-col items-center bg-gray-800/30 p-4 rounded-xl hover:bg-purple-800/30 transition">
-      <img src="/skills/tailwindcss.svg" alt="Tailwind CSS" className="w-10 h-10 mb-2" />
-      <span className="text-sm font-medium">Tailwind CSS</span>
-    </div>
+            <p className="mt-5 text-base leading-8 text-zinc-400 sm:text-lg">
+              My work spans modern frontend development
+              and backend systems. When I&apos;m not
+              building, I share what I learn through
+              CodeWithKanye and help aspiring developers
+              move forward with confidence.
+            </p>
 
-    <div className="flex flex-col items-center bg-gray-800/30 p-4 rounded-xl hover:bg-purple-800/30 transition">
-      <img src="/skills/supabase.svg" alt="Supabase" className="w-10 h-10 mb-2" />
-      <span className="text-sm font-medium">Supabase</span>
-    </div>
+            <a
+              href="https://docs.google.com/document/d/1ne6JOcG4xCcySel87sxExoDVrflW-Xxj/edit?usp=sharing&ouid=103868621152933047619&rtpof=true&sd=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-7 inline-flex items-center gap-2 font-semibold text-lime-300 transition hover:text-lime-200"
+            >
+              View my résumé
+              <ArrowUpRight size={17} />
+            </a>
+          </div>
+        </div>
+      </section>
 
-    <div className="flex flex-col items-center bg-gray-800/30 p-4 rounded-xl hover:bg-purple-800/30 transition">
-      <img src="/skills/git.svg" alt="Git" className="w-10 h-10 mb-2" />
-      <span className="text-sm font-medium">Git</span>
-    </div>
+      {/* Skills */}
+      <section
+        id="skills"
+        className="border-t border-white/10 px-5 py-24 sm:px-8 lg:px-12 lg:py-32"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-purple-400">
+                02 — Expertise
+              </p>
 
-    <div className="flex flex-col items-center bg-gray-800/30 p-4 rounded-xl hover:bg-purple-800/30 transition">
-      <img src="/skills/github.svg" alt="GitHub" className="w-10 h-10 mb-2" />
-      <span className="text-sm font-medium">GitHub</span>
-    </div>
+              <h2 className="mt-5 max-w-2xl text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl">
+                A growing toolkit for modern products.
+              </h2>
+            </div>
 
-    <div className="flex flex-col items-center bg-gray-800/30 p-4 rounded-xl hover:bg-purple-800/30 transition">
-      <img src="/skills/vscode.svg" alt="VS Code" className="w-10 h-10 mb-2" />
-      <span className="text-sm font-medium">VS Code</span>
-    </div>
-  </div>
-</section>
-{/* PROJECTS SECTION */}
-  {/* PROJECTS SECTION */}
-<section id="projects" className="px-6 md:px-24 py-20 bg-black/30 text-center">
-  <h2 className="text-3xl md:text-4xl font-bold text-purple-400 mb-10">Projects</h2>
-  <p className="text-gray-300 max-w-3xl mx-auto text-base md:text-lg mb-10">
-    Here are some of the projects I`ve worked on recently. Each one reflects my passion for frontend development and user experience.
-  </p>
+            <p className="max-w-md text-base leading-7 text-zinc-400">
+              From interface architecture to APIs and
+              databases, I choose tools that fit the
+              problem.
+            </p>
+          </div>
 
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-    {/* Project Card 1 */}
-    {/* <div className="bg-gray-800/40 rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 transition">
-      <h3 className="text-xl font-semibold text-white mb-2">AITECHEM</h3>
-      <p className="text-sm text-gray-300 mb-4">
-        An AI-powered online exam system for students and lecturers, built with Supabase and Next.js.
-      </p>
-      <div className="flex flex-wrap gap-2 mb-4 text-sm">
-        <span className="bg-purple-700 px-2 py-1 rounded">Next.js</span>
-        <span className="bg-purple-700 px-2 py-1 rounded">Tailwind</span>
-        <span className="bg-purple-700 px-2 py-1 rounded">Supabase</span>
-      </div>
-      <div className="flex justify-between items-center text-sm">
-        <a href="https://aitechem.vercel.app" target="_blank" className="text-purple-400 hover:underline">Live Demo</a>
-        <a href="https://github.com/AlbertAdekanye/AITECHEM" target="_blank" className="text-gray-400 hover:underline">GitHub</a>
-      </div>
-    </div> */}
+          <div className="mt-14 grid gap-5 md:grid-cols-3">
+            {skills.map((group, groupIndex) => (
+              <article
+                key={group.category}
+                className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition hover:-translate-y-1 hover:border-purple-400/40 hover:bg-purple-400/5"
+              >
+                <div className="flex items-center justify-between">
+                  <h3 className="text-lg font-semibold text-white">
+                    {group.category}
+                  </h3>
 
-    {/* Project Card 2 */}
-    {/* <div className="bg-gray-800/40 rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 transition">
-      <h3 className="text-xl font-semibold text-white mb-2">FUOYE Market</h3>
-      <p className="text-sm text-gray-300 mb-4">
-        A campus-based online marketplace for students to buy and sell products securely.
-      </p>
-      <div className="flex flex-wrap gap-2 mb-4 text-sm">
-        <span className="bg-purple-700 px-2 py-1 rounded">Next.js</span>
-        <span className="bg-purple-700 px-2 py-1 rounded">Supabase</span>
-        <span className="bg-purple-700 px-2 py-1 rounded">Tailwind</span>
-      </div>
-      <div className="flex justify-between items-center text-sm">
-        <a href="https://fuoyemarket.vercel.app" target="_blank" className="text-purple-400 hover:underline">Live Demo</a>
-        <a href="https://github.com/AlbertAdekanye/fuoye-market" target="_blank" className="text-gray-400 hover:underline">GitHub</a>
-      </div>
-    </div> */}
+                  <span className="font-mono text-xs text-purple-400">
+                    0{groupIndex + 1}
+                  </span>
+                </div>
 
-    {/* Project Card 3 */}
-    {/* <div className="bg-gray-800/40 rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 transition">
-      <h3 className="text-xl font-semibold text-white mb-2">Tesla Clone</h3>
-      <p className="text-sm text-gray-300 mb-4">
-        A beautiful landing page clone of the Tesla homepage built for learning UI/UX structure.
-      </p>
-      <div className="flex flex-wrap gap-2 mb-4 text-sm">
-        <span className="bg-purple-700 px-2 py-1 rounded">React</span>
-        <span className="bg-purple-700 px-2 py-1 rounded">Tailwind CSS</span>
-      </div>
-      <div className="flex justify-between items-center text-sm">
-        <a href="https://tesla-clone-codewithkanye.vercel.app" target="_blank" className="text-purple-400 hover:underline">Live Demo</a>
-        <a href="https://github.com/AlbertAdekanye/tesla-clone" target="_blank" className="text-gray-400 hover:underline">GitHub</a>
-      </div>
-    </div> */}
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {group.items.map((skill) => (
+                    <span
+                      key={skill}
+                      className="rounded-full border border-white/10 bg-zinc-950 px-3 py-2 text-xs text-zinc-300"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
-    {/* Project Card 4 */}
-    <div className="bg-gray-800/40 rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 transition">
-      <h3 className="text-xl font-semibold text-white mb-2">NIKE STORE</h3>
-      <p className="text-sm text-gray-300 mb-4">
-        A responsive e-commerce website for Nike products, showcasing my skills in frontend development.
-      </p>
-      <div className="flex flex-wrap gap-2 mb-4 text-sm">
-        <span className="bg-purple-700 px-2 py-1 rounded">React</span>
-        <span className="bg-purple-700 px-2 py-1 rounded">Tailwind CSS</span>
-      </div>
-      <div className="flex justify-between items-center text-sm">
-        <a href="https://nike-fake-store-clone.vercel.app/" target="_blank" className="text-purple-400 hover:underline">Live Demo</a>
-        <a href="https://github.com/AlbertAdekanye/nike-fake-store-clone" target="_blank" className="text-gray-400 hover:underline">GitHub</a>
-      </div>
-    </div>
+      {/* Projects */}
+      <section
+        id="projects"
+        className="border-t border-white/10 px-5 py-24 sm:px-8 lg:px-12 lg:py-32"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-purple-400">
+                03 — Selected work
+              </p>
 
-    {/* Project Card 5 */}
-    <div className="bg-gray-800/40 rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 transition">
-      <h3 className="text-xl font-semibold text-white mb-2">REALTOR</h3>
-      <p className="text-sm text-gray-300 mb-4">
-        A modern real estate website showcasing properties with advanced search and filter features.
-      </p>
-      <div className="flex flex-wrap gap-2 mb-4 text-sm">
-        <span className="bg-purple-700 px-2 py-1 rounded">React</span>
-        <span className="bg-purple-700 px-2 py-1 rounded">Tailwind CSS</span>
-      </div>
-      <div className="flex justify-between items-center text-sm">
-        <a href="https://realtor-clone-five-alpha.vercel.app/sign-in" target="_blank" className="text-purple-400 hover:underline">Live Demo</a>
-        <a href="https://github.com/AlbertAdekanye/Realtor-Clone" target="_blank" className="text-gray-400 hover:underline">GitHub</a>
-      </div>
-    </div>
+              <h2 className="mt-5 text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl">
+                Projects built with purpose.
+              </h2>
+            </div>
 
-    {/* Project Card 6 */}
-    <div className="bg-gray-800/40 rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 transition">
-      <h3 className="text-xl font-semibold text-white mb-2">IMDB-clone</h3>
-      <p className="text-sm text-gray-300 mb-4">
-        A clone of the popular IMDB website, showcasing movies, TV shows, and more with a sleek design.
-      </p>
-      <div className="flex flex-wrap gap-2 mb-4 text-sm">
-        <span className="bg-purple-700 px-2 py-1 rounded">React</span>
-        <span className="bg-purple-700 px-2 py-1 rounded">Tailwind CSS</span>
-      </div>
-      <div className="flex justify-between items-center text-sm">
-        <a href="https://imdb-clone-liard-two.vercel.app " target="_blank" className="text-purple-400 hover:underline">Live Demo</a>
-        <a href="https://github.com/AlbertAdekanye/IMDB-clone" target="_blank" className="text-gray-400 hover:underline">GitHub</a>
-      </div>
-    </div>
+            <a
+              href="https://github.com/AlbertAdekanye"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-semibold text-lime-300 transition hover:text-lime-200"
+            >
+              See all projects
+              <ArrowUpRight size={17} />
+            </a>
+          </div>
 
-  {/* Project Card 7 */}
-    <div className="bg-gray-800/40 rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 transition">
-      <h3 className="text-xl font-semibold text-white mb-2">BOOKMARK WEBSITE</h3>
-      <p className="text-sm text-gray-300 mb-4">
-        A simple bookmark website that allows users to save and manage their favorite links.
-      </p>
-      <div className="flex flex-wrap gap-2 mb-4 text-sm">
-        <span className="bg-purple-700 px-2 py-1 rounded">React</span>
-        <span className="bg-purple-700 px-2 py-1 rounded">Tailwind CSS</span>
-      </div>
-      <div className="flex justify-between items-center text-sm">
-        <a href="https://albertadekanye.github.io/bookmark1/ " target="_blank" className="text-purple-400 hover:underline">Live Demo</a>
-        <a href="https://github.com/AlbertAdekanye/bookmark1" target="_blank" className="text-gray-400 hover:underline">GitHub</a>
-      </div>
-    </div>
+          <div className="mt-14 grid gap-5 md:grid-cols-2">
+            {projects.map((project, index) => (
+              <article
+                key={project.title}
+                className={`flex min-h-[390px] flex-col rounded-3xl border p-6 transition hover:-translate-y-1 sm:p-8 ${
+                  project.featured
+                    ? "border-purple-400/30 bg-gradient-to-br from-purple-400/15 via-zinc-900 to-zinc-900"
+                    : "border-white/10 bg-zinc-900/60 hover:border-white/20"
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-xs text-zinc-600">
+                    0{index + 1}
+                  </span>
 
-  {/* Project Card 8 */}
-      <div className="bg-gray-800/40 rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 transition">
-      <h3 className="text-xl font-semibold text-white mb-2">FYLO</h3>
-      <p className="text-sm text-gray-300 mb-4">
-        A responsive landing page for a file storage service, showcasing modern design and layout techniques.
-      </p>
-      <div className="flex flex-wrap gap-2 mb-4 text-sm">
-        <span className="bg-purple-700 px-2 py-1 rounded">React</span>
-        <span className="bg-purple-700 px-2 py-1 rounded">Tailwind CSS</span>
-      </div>
-      <div className="flex justify-between items-center text-sm">
-        <a href="https://albertadekanye.github.io/fylo1/ " target="_blank" className="text-purple-400 hover:underline">Live Demo</a>
-        <a href="https://github.com/AlbertAdekanye/fylo1" target="_blank" className="text-gray-400 hover:underline">GitHub</a>
-      </div>
-    </div>
+                  {project.featured && (
+                    <span className="rounded-full border border-lime-300/20 bg-lime-300/5 px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-lime-300">
+                      Featured
+                    </span>
+                  )}
+                </div>
 
-    {/* Project Card 9 */}
-    <div className="bg-gray-800/40 rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 transition">
-      <h3 className="text-xl font-semibold text-white mb-2">TESTIMONIAL-GRID</h3>
-      <p className="text-sm text-gray-300 mb-4">
-        A testimonial grid layout showcasing user feedback in a visually appealing format.
-      </p>
-      <div className="flex flex-wrap gap-2 mb-4 text-sm">
-        <span className="bg-purple-700 px-2 py-1 rounded">React</span>
-        <span className="bg-purple-700 px-2 py-1 rounded">Tailwind CSS</span>
-      </div>
-      <div className="flex justify-between items-center text-sm">
-        <a href="https://albertadekanye.github.io/Testimonial-Grid-1/" target="_blank" className="text-purple-400 hover:underline">Live Demo</a>
-        <a href="https://github.com/AlbertAdekanye/Testimonial-Grid1" target="_blank" className="text-gray-400 hover:underline">GitHub</a>
-      </div>
-    </div>
-  </div>
-</section>
+                <div className="my-auto py-10">
+                  <h3 className="text-3xl font-semibold tracking-[-0.03em] text-white">
+                    {project.title}
+                  </h3>
 
-{/* TESTIMONIALS SECTION */}
-<section id="testimonials" className="px-6 md:px-24 py-20 bg-black/20 text-center">
-  <h2 className="text-3xl md:text-4xl font-bold text-purple-400 mb-10">Testimonials</h2>
-  <p className="text-gray-300 max-w-3xl mx-auto text-base md:text-lg mb-12">
-    Here`s what people I`ve worked with have to say about my work and collaboration.
-  </p>
+                  <p className="mt-4 max-w-xl leading-7 text-zinc-400">
+                    {project.description}
+                  </p>
+                </div>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-    {/* Testimonial 1 */}
-    <div className="bg-gray-800/40 p-6 rounded-xl shadow-md hover:shadow-lg transition">
-      <p className="text-gray-300 italic mb-4">
-        “Albert has a deep understanding of frontend architecture. Working with him was seamless — his attention to detail is top-notch.”
-      </p>
-      <div className="text-left">
-        <p className="text-white font-semibold">DT Effects</p>
-        <p className="text-sm text-purple-300">Lead Designer @ DT Effects</p>
-      </div>
-    </div>
+                <div>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map(
+                      (technology) => (
+                        <span
+                          key={technology}
+                          className="rounded-full border border-white/10 px-3 py-1.5 text-xs text-zinc-400"
+                        >
+                          {technology}
+                        </span>
+                      )
+                    )}
+                  </div>
 
-    {/* Testimonial 2 */}
-    <div className="bg-gray-800/40 p-6 rounded-xl shadow-md hover:shadow-lg transition">
-      <p className="text-gray-300 italic mb-4">
-        “His ability to translate complex ideas into clean, modern UIs is truly impressive. He’s also a great team player!”
-      </p>
-      <div className="text-left">
-        <p className="text-white font-semibold">Sarah Musa</p>
-        <p className="text-sm text-purple-300">Product Designer @ UIWorx</p>
-      </div>
-    </div>
+                  <div className="mt-7 flex flex-wrap gap-5">
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-purple-400 transition hover:text-purple-300"
+                      >
+                        Live site
+                        <ArrowUpRight size={16} />
+                      </a>
+                    )}
 
-    {/* Testimonial 3 */}
-    <div className="bg-gray-800/40 p-6 rounded-xl shadow-md hover:shadow-lg transition">
-      <p className="text-gray-300 italic mb-4">
-        “CodeWithKanye is more than just a brand — Albert is building a movement that inspires future developers every day.”
-      </p>
-      <div className="text-left">
-        <p className="text-white font-semibold">Toffy A.</p>
-        <p className="text-sm text-purple-300">Founder @ Inspired by Anna</p>
-      </div>
-    </div>
-  </div>
-</section>
-{/* BLOG SECTION */}
-<section id="blog" className="px-6 md:px-24 py-20 bg-black/30 text-center">
-  <h2 className="text-3xl md:text-4xl font-bold text-purple-400 mb-10">Latest Blog Posts</h2>
-  <p className="text-gray-300 max-w-3xl mx-auto text-base md:text-lg mb-12">
-    I regularly share my thoughts on frontend engineering, tech tutorials, and lessons learned. Here are some of my recent posts.
-  </p>
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-300 transition hover:text-white"
+                    >
+                      <Github size={16} />
+                      Source code
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-    {/* Blog Card 1 */}
-    <div className="bg-gray-800/40 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
-      <img src="/blogs/solana-dust.jpg" alt="Solana Dusting Detection" className="w-full h-40 object-cover" />
-      <div className="p-6 text-left">
-        <h3 className="text-xl font-semibold text-white mb-2">Detecting Solana Dusting & Address Poisoning</h3>
-        <p className="text-sm text-gray-300 mb-4">
-          Learn how I built an API to detect address poisoning attacks on the Solana blockchain using pattern-matching and transaction parsing.
-        </p>
-        <a
-          href="https://medium.com/@AlbertAdekanye/solana-dusting-detector"
-          target="_blank"
-          className="text-purple-400 text-sm hover:underline"
-        >
-          Read on Medium →
-        </a>
-      </div>
-    </div>
-
-    {/* Blog Card 2 */}
-    <div className="bg-gray-800/40 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
-      <img src="/blogs/frontend-roadmap.jpg" alt="Frontend Roadmap" className="w-full h-40 object-cover" />
-      <div className="p-6 text-left">
-        <h3 className="text-xl font-semibold text-white mb-2">Mastering Frontend in 2025: A Roadmap</h3>
-        <p className="text-sm text-gray-300 mb-4">
-          From HTML to frameworks, this roadmap will guide you through essential frontend technologies to learn this year.
-        </p>
-        <a
-          href="https://medium.com/@AlbertAdekanye/frontend-roadmap-2025"
-          target="_blank"
-          className="text-purple-400 text-sm hover:underline"
-        >
-          Read Full Post →
-        </a>
-      </div>
-    </div>
-
-    {/* Blog Card 3 */}
-    <div className="bg-gray-800/40 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
-      <img src="/blogs/youtube-journey.jpg" alt="YouTube Journey" className="w-full h-40 object-cover" />
-      <div className="p-6 text-left">
-        <h3 className="text-xl font-semibold text-white mb-2">Building CodeWithKanye on YouTube</h3>
-        <p className="text-sm text-gray-300 mb-4">
-          A behind-the-scenes look at how I started my YouTube channel and my content strategy as a developer-educator.
-        </p>
-        <a
-          href="https://medium.com/@AlbertAdekanye/youtube-journey"
-          target="_blank"
-          className="text-purple-400 text-sm hover:underline"
-        >
-          Read the Story →
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-{/* CONTACT SECTION */}
-<Contact />
-{/* FOOTER */}
-
-<Footer />
-</main>
+      <Contact />
+      <Footer />
+    </main>
   );
 }

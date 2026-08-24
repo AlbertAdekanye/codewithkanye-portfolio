@@ -1,7 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import { Toaster } from "react-hot-toast";
-import { ThemeProvider } from "next-themes"; // ✅ import next-themes
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,22 +13,81 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "CodeWithKanye",
-  description: "Portfolio of Albert Adekanye – Frontend Dev & Tech Educator",
+  metadataBase: new URL(
+    "https://codewithkanye-portfolio.vercel.app"
+  ),
+
+  title: {
+    default: "Albert Adekanye | Full-Stack Developer",
+    template: "%s | Albert Adekanye",
+  },
+
+  description:
+    "Portfolio of Albert Adekanye, a frontend and full-stack developer and tech educator building modern, accessible web applications.",
+
+  keywords: [
+    "Albert Adekanye",
+    "CodeWithKanye",
+    "Frontend Developer",
+    "Full-Stack Developer",
+    "React Developer",
+    "Next.js Developer",
+    "Nigerian Developer",
+    "Tech Educator",
+  ],
+
+  authors: [
+    {
+      name: "Albert Adekanye",
+    },
+  ],
+
+  openGraph: {
+    title: "Albert Adekanye | Full-Stack Developer",
+    description:
+      "Frontend and full-stack developer building modern and accessible digital products.",
+    url: "https://codewithkanye-portfolio.vercel.app",
+    siteName: "CodeWithKanye",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Albert Adekanye | Full-Stack Developer",
+    description:
+      "Frontend and full-stack developer building modern and accessible digital products.",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
-          <Toaster position="top-right" reverseOrder={false} />
-        </ThemeProvider>
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
+
+        {children}
+
+        <Toaster
+          position="top-right"
+          toastOptions={{
+            duration: 4000,
+            style: {
+              background: "#18181b",
+              color: "#fafafa",
+              border: "1px solid #3f3f46",
+            },
+          }}
+        />
       </body>
     </html>
   );
 }
-// This layout wraps the entire application, providing global styles and configurations.
