@@ -69,12 +69,12 @@ export default function Contact() {
           </p>
 
           <a
-            href="mailto:adekanyealbert22@gmail.com"
+            href="mailto:codewithkanye@gmail.com"
             className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-lime-300 transition hover:text-lime-200 sm:text-base"
           >
             <Mail size={18} />
 
-            <span>adekanyealbert22@gmail.com</span>
+            <span>codewithkanye@gmail.com</span>
 
             <ArrowUpRight size={17} />
           </a>
