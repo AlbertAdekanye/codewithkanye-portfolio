@@ -87,8 +87,51 @@ const skills = [
     ],
   },
 ];
-
 const projects = [
+  {
+    title: "GRIT",
+    description:
+      "A modern Nigerian streetwear e-commerce website featuring product discovery, category filtering, search, product details, size selection, cart management, and a responsive shopping experience.",
+    technologies: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "React Router",
+    ],
+    liveUrl: "https://grit-pi.vercel.app/",
+    githubUrl: "https://github.com/AlbertAdekanye/GRIT",
+    featured: true,
+  },
+  {
+    title: "The Art of Dining",
+    description:
+      "An elegant restaurant website designed to showcase memorable dining experiences, signature dishes, brand storytelling, and table reservations across all screen sizes.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+    ],
+    liveUrl: "https://the-art-of-dining.vercel.app/",
+    githubUrl:
+      "https://github.com/AlbertAdekanye/the-art-of-dining",
+    featured: true,
+  },
+  {
+    title: "Mide Soles",
+    description:
+      "A responsive footwear business website showcasing handmade shoes by category, with clear product presentation and direct WhatsApp enquiries for a simple customer ordering experience.",
+    technologies: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "React Router",
+    ],
+    liveUrl: "https://mide-soles.vercel.app/",
+    githubUrl:
+      "https://github.com/AlbertAdekanye/mide-soles",
+    featured: true,
+  },
   {
     title: "Letters to CR7",
     description:
@@ -112,6 +155,7 @@ const projects = [
       "Node.js",
       "Express.js",
       "MongoDB",
+      "Mongoose",
       "Pug",
     ],
     githubUrl:
@@ -121,7 +165,7 @@ const projects = [
   {
     title: "Realtor",
     description:
-      "A modern real-estate platform that allows users to discover, search, filter, and explore property listings.",
+      "A modern real-estate platform that allows users to discover, search, filter, and explore available property listings.",
     technologies: [
       "React",
       "Tailwind CSS",
@@ -131,40 +175,6 @@ const projects = [
       "https://realtor-clone-five-alpha.vercel.app/sign-in",
     githubUrl:
       "https://github.com/AlbertAdekanye/Realtor-Clone",
-  },
-  {
-    title: "Nike Store",
-    description:
-      "A responsive e-commerce storefront focused on clear product presentation and a polished shopping experience.",
-    technologies: ["React", "Tailwind CSS"],
-    liveUrl:
-      "https://nike-fake-store-clone.vercel.app/",
-    githubUrl:
-      "https://github.com/AlbertAdekanye/nike-fake-store-clone",
-  },
-  {
-    title: "Tesla Clone",
-    description:
-      "A responsive recreation of Tesla's landing experience, built to practise visual hierarchy, layouts, and modern interactions.",
-    technologies: ["React", "Tailwind CSS"],
-    liveUrl:
-      "https://tesla-clone-codewithkanye.vercel.app",
-    githubUrl:
-      "https://github.com/AlbertAdekanye/tesla-clone",
-  },
-  {
-    title: "IMDb Clone",
-    description:
-      "A responsive movie-discovery interface for browsing film and television content through a clean user experience.",
-    technologies: [
-      "React",
-      "Tailwind CSS",
-      "REST API",
-    ],
-    liveUrl:
-      "https://imdb-clone-liard-two.vercel.app",
-    githubUrl:
-      "https://github.com/AlbertAdekanye/IMDB-clone",
   },
 ];
 
